@@ -1,0 +1,21 @@
+baseURL = 'https://example.org/'
+languageCode = "zh-cn" # 语言
+title = "我的博客" # 网站标题
+theme = "PaperMod" # 指定使用 PaperMod 主题
+
+[params]
+author = "Huggin"
+description = "这个博客用于记录技术学习过程和生活"
+
+# 菜单配置
+[[menu.main]]
+identifier = "posts"
+name = "文章"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "标签"
+url = "/tags/"
+weight = 20
