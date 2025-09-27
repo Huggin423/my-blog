@@ -1,7 +1,7 @@
-baseURL = 'https://example.org/'
-languageCode = "zh-cn" # 语言
-title = "我的博客" # 网站标题
-theme = "PaperMod" # 指定使用 PaperMod 主题
+baseURL = 'https://my-blog-lemon-rho.vercel.app/'
+languageCode = "zh-cn" 
+title = "我的博客"
+theme = "PaperMod" 
 
 [params]
 author = "Huggin"
