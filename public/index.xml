@@ -2,28 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>我的博客</title>
-    <link>http://localhost:1313/</link>
+    <link>https://my-blog-lemon-rho.vercel.app/</link>
     <description>Recent content on 我的博客</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Sep 2025 08:59:57 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Virtuals Hackathon AI模块开发记录</title>
-      <link>http://localhost:1313/posts/virtualshackathon/</link>
-      <pubDate>Sat, 27 Sep 2025 08:59:57 +0800</pubDate>
-      <guid>http://localhost:1313/posts/virtualshackathon/</guid>
-      <description>&lt;h3 id=&#34;ai任务定义&#34;&gt;AI任务定义&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;核心任务：根据市场状态，决定资金在 &lt;strong&gt;“避险资产（Aave）”&lt;/strong&gt; 和 &lt;strong&gt;“风险/收益资产（Uniswap V3 LP）”&lt;/strong&gt; 之间的分配比例，并为风险资产提供最优的参数。&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Wed, 17 Sep 2025 08:38:14 +0800</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://my-blog-lemon-rho.vercel.app/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
