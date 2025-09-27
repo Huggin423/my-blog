@@ -1,6 +1,6 @@
 +++
 date = '2025-09-27T08:59:57+08:00'
-draft = true
+draft = false
 title = 'Virtuals Hackathon AI模块开发记录'
 tags = ["技术", "博客"]
 categories = ["技术分享"]
