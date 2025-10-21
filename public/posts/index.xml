@@ -6,8 +6,36 @@
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Sep 2025 08:59:57 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Sep 2025 20:05:27 +0800</lastBuildDate>
     <atom:link href="https://my-blog-lemon-rho.vercel.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录迁移学习综述</title>
+      <link>https://my-blog-lemon-rho.vercel.app/posts/transferlearning/</link>
+      <pubDate>Sun, 28 Sep 2025 20:05:27 +0800</pubDate>
+      <guid>https://my-blog-lemon-rho.vercel.app/posts/transferlearning/</guid>
+      <description>&lt;h4 id=&#34;迁移学习主要的实现方式&#34;&gt;迁移学习主要的实现方式&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;使用预训练模型(Using Pre-trained Models)&lt;/li&gt;
+&lt;li&gt;使用抽取特征(Feature Extraction)
+这里可能需要与第一点区别，我的理解是这里只提取关键层的特征，比如视觉模型的识别边缘、形状、颜色的能力。&lt;/li&gt;
+&lt;li&gt;模型微调(Model Fine-tuning)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;迁移学习的优势&#34;&gt;迁移学习的优势&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;减少训练时间，同时增强原有模型的效果。&lt;/li&gt;
+&lt;li&gt;缓解数据缺乏的问题。&lt;/li&gt;
+&lt;li&gt;更好的泛化性。在这里迁移学习更像是一种学习范式，它可以让GPT或BERT模型的能力提升。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;迁移学习技术&#34;&gt;迁移学习技术&lt;/h4&gt;
+&lt;p&gt;根据源数据与目标数据的关系，可以将迁移学习技术分为以下几类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;归纳迁移学习(Inductive Transfer Learning)
+源数据训练的模型与目标数据正相关，这意味着模型只需要继续从目标数据中提取特征即可。&lt;/li&gt;
+&lt;li&gt;无监督迁移学习(Unsupervised Transfer Learning)
+这常用于目标任务没有可用标记数据的情况。这种方法使模型能够从原任务中学习通用特征，并将这些知识迁移到目标任务中。&lt;/li&gt;
+&lt;li&gt;传导迁移学习(Transductive Transfer Learning)&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>Virtuals Hackathon AI模块开发记录</title>
       <link>https://my-blog-lemon-rho.vercel.app/posts/virtualshackathon/</link>
@@ -17,6 +45,13 @@
 &lt;ul&gt;
 &lt;li&gt;核心任务：根据市场状态，决定资金在 &lt;strong&gt;“避险资产（Aave）”&lt;/strong&gt; 和 &lt;strong&gt;“风险/收益资产（Uniswap V3 LP）”&lt;/strong&gt; 之间的分配比例，并为风险资产提供最优的参数。&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>https://my-blog-lemon-rho.vercel.app/posts/my-first-post/</link>
+      <pubDate>Wed, 17 Sep 2025 08:38:14 +0800</pubDate>
+      <guid>https://my-blog-lemon-rho.vercel.app/posts/my-first-post/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
