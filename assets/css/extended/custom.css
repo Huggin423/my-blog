@@ -1,0 +1,36 @@
+/* 自定义样式 */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 文章卡片悬浮效果 */
+.post-entry {
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 代码块样式优化 */
+pre {
+    border-radius: 8px;
+    background: #1e293b !important;
+}
+
+/* 图片悬浮效果 */
+.post-content img {
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.post-content img:hover {
+    transform: scale(1.02);
+}
