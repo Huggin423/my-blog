@@ -1,6 +1,6 @@
 +++
 date = '2025-10-22T08:05:45+08:00'
-draft = true
+draft = false
 title = 'ETHShanghai_Hackathon_2025'
 +++
 

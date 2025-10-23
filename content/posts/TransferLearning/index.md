@@ -1,6 +1,6 @@
 +++
 date = '2025-09-28T20:05:27+08:00'
-draft = true
+draft = false
 title = '记录迁移学习综述'
 +++
 

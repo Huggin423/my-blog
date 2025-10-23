@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 我的博客</title>
-    <link>https://my-blog-lemon-rho.vercel.app/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 22 Oct 2025 08:05:45 +0800</lastBuildDate>
-    <atom:link href="https://my-blog-lemon-rho.vercel.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ETHShanghai_Hackathon_2025</title>
-      <link>https://my-blog-lemon-rho.vercel.app/posts/ethshanghai_hackathon_2025/</link>
+      <link>http://localhost:1313/posts/ethshanghai_hackathon_2025/</link>
       <pubDate>Wed, 22 Oct 2025 08:05:45 +0800</pubDate>
-      <guid>https://my-blog-lemon-rho.vercel.app/posts/ethshanghai_hackathon_2025/</guid>
+      <guid>http://localhost:1313/posts/ethshanghai_hackathon_2025/</guid>
       <description>&lt;h3 id=&#34;概述&#34;&gt;概述&lt;/h3&gt;
 &lt;p&gt;最近参加了ETHShanghai的黑客松，还算是有点收获，以下从参赛感受、项目思路等几个方面展开。&lt;/p&gt;
 &lt;h3 id=&#34;参赛感受&#34;&gt;参赛感受&lt;/h3&gt;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>记录迁移学习综述</title>
-      <link>https://my-blog-lemon-rho.vercel.app/posts/transferlearning/</link>
+      <link>http://localhost:1313/posts/transferlearning/</link>
       <pubDate>Sun, 28 Sep 2025 20:05:27 +0800</pubDate>
-      <guid>https://my-blog-lemon-rho.vercel.app/posts/transferlearning/</guid>
+      <guid>http://localhost:1313/posts/transferlearning/</guid>
       <description>&lt;h4 id=&#34;迁移学习主要的实现方式&#34;&gt;迁移学习主要的实现方式&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;使用预训练模型(Using Pre-trained Models)&lt;/li&gt;
@@ -64,9 +64,9 @@
     </item>
     <item>
       <title>Virtuals Hackathon AI模块开发记录</title>
-      <link>https://my-blog-lemon-rho.vercel.app/posts/virtualshackathon/</link>
+      <link>http://localhost:1313/posts/virtualshackathon/</link>
       <pubDate>Sat, 27 Sep 2025 08:59:57 +0800</pubDate>
-      <guid>https://my-blog-lemon-rho.vercel.app/posts/virtualshackathon/</guid>
+      <guid>http://localhost:1313/posts/virtualshackathon/</guid>
       <description>&lt;h3 id=&#34;ai任务定义&#34;&gt;AI任务定义&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;核心任务：根据市场状态，决定资金在 &lt;strong&gt;“避险资产（Aave）”&lt;/strong&gt; 和 &lt;strong&gt;“风险/收益资产（Uniswap V3 LP）”&lt;/strong&gt; 之间的分配比例，并为风险资产提供最优的参数。&lt;/li&gt;

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>技术分享 | 我的博客</title>
+<title>LoRA 系列 | 我的博客</title>
 <meta name="keywords" content="">
-<meta name="description" content="这个博客用于记录技术学习过程和生活">
+<meta name="description" content="这里是关于 LoRA (Low-Rank Adaptation) 技术的系列文章，涵盖了从基本概念到实际操作的各方面。">
 <meta name="author" content="Huggin">
-<link rel="canonical" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">
+<link rel="canonical" href="http://localhost:1313/posts/lora/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d9613ad5c4b1da1445a92ef572f28295182a49ca9340e996908c51386fc74560.css" integrity="sha256-2WE61cSx2hRFqS71cvKClRgqScqTQOmWkIxROG/HRWA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/lora/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/lora/">
 <noscript>
     <style>
         #theme-toggle,
@@ -115,20 +115,51 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    技术分享
+    LoRA 系列
   </h1>
 </header>
+<div class="post-content"><p>这里是关于 LoRA (Low-Rank Adaptation) 技术的系列文章，涵盖了从基本概念到实际操作的各方面。</p>
 
-<article class="post-entry tag-entry"> 
+
+</div>
+
+<article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Virtuals Hackathon AI模块开发记录
+    <h2 class="entry-hint-parent">LoRA_1
     </h2>
   </header>
   <div class="entry-content">
-    <p>AI任务定义 核心任务：根据市场状态，决定资金在 “避险资产（Aave）” 和 “风险/收益资产（Uniswap V3 LP）” 之间的分配比例，并为风险资产提供最优的参数。 ...</p>
+    <p>Utils for LoRA merge_and_unload(): 将适配器权重与基础模型合并，从而将新合并的模型作为一个独立模型有效使用。 merge_adapter(): 将LoRA层（与前面的适配器权重的关系？）合并到基础模型中，并保留PEFTModel。 unmerge_adapter(): 将LoRA层从基础模型解合并，同时保留PEFTModel。 unload(): 获取未合并LoRA层前的基础模型，主要是为了获得origin model，听说在Stable Diffusion WebUi中会使用（这是什么？）。 delete_adapter(): 删除现有适配器。 add_weighted_adapter():根据用户提供的权重方案将多个LoRAs组合成一个新的适配器。 PEFT中常见的LoRA参数 常见的使用LoRA微调模型的流程： 实例化基础模型 –&gt; 创建配置(LoraConfig)，包含LoRA特定参数 –&gt; 将基础模型使用get_peft_model包裹，获取可训练的PEFTModel –&gt; 开始训练
+这里具体介绍LoraConfig包含哪些参数来控制LoRA应用于基础模型。
+rank 更新矩阵的秩，用 int 表示。较低的秩会导致更新矩阵更小，训练参数更少。 target_modules 应用于 LoRA 更新矩阵的模块 lora_alpha LoRA 缩放因子 bias 指定 bias 参数是否需要训练。可以是 ’none’ 、 ‘all’ 或 ’lora_only’ use_rslora 当设置为 True 时，使用 Rank-Stabilized LoRA，将适配器缩放因子设置为 lora_alpha/math.sqrt(r) ，因为它被证明效果更好。否则，它将使用原始默认值 lora_alpha/r。 modules_to_save 除了 LoRA 层之外，需要设置为可训练并保存在最终检查点中的模块列表。这些通常包括模型的自定义头部，该头部在微调任务中随机初始化。 layers_to_transform 需要由 LoRA 转换的层列表。如果未指定，则 target_modules 中的所有层都将被转换。 layers_pattern 匹配 target_modules 中层名称的模式，如果指定了 layers_to_transform 。默认情况下 PeftModel 会查看常见层模式（ layers , h , blocks 等），用于异类和自定义模型。 rank_pattern 将层名称或正则表达式映射到与 r 指定的默认秩不同的秩。 alpha_pattern : 将层名称或正则表达式映射到与 lora_alpha指定的默认 alpha 不同的 alpha。 初始化选项 LoRA 权重的初始化由 LoraConfig 的 init_lora_weights 参数控制。默认情况下，PEFT 以参考实现相同的方式初始化 LoRA 权重，即使用 Kaiming-uniform 初始化权重 A，并将权重 B 初始化为零，从而得到恒等变换。
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-27 08:59:57 +0800 CST'>September 27, 2025</span>&nbsp;·&nbsp;Huggin</footer>
-  <a class="entry-link" aria-label="post link to Virtuals Hackathon AI模块开发记录" href="http://localhost:1313/posts/virtualshackathon/"></a>
+  <footer class="entry-footer"><span title='2025-10-22 14:32:14 +0800 CST'>October 22, 2025</span>&nbsp;·&nbsp;Huggin</footer>
+  <a class="entry-link" aria-label="post link to LoRA_1" href="http://localhost:1313/posts/lora/concept/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LoRA 实操
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-22 11:26:01 +0800 CST'>October 22, 2025</span>&nbsp;·&nbsp;Huggin</footer>
+  <a class="entry-link" aria-label="post link to LoRA 实操" href="http://localhost:1313/posts/lora/operation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LoRA 总结与衍生
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-22 11:26:01 +0800 CST'>October 22, 2025</span>&nbsp;·&nbsp;Huggin</footer>
+  <a class="entry-link" aria-label="post link to LoRA 总结与衍生" href="http://localhost:1313/posts/lora/summary/"></a>
 </article>
     </main>
     

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LoRA 系列 on 我的博客</title>
+    <link>http://localhost:1313/posts/lora/</link>
+    <description>Recent content in LoRA 系列 on 我的博客</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 22 Oct 2025 14:32:14 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/lora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LoRA_1</title>
+      <link>http://localhost:1313/posts/lora/concept/</link>
+      <pubDate>Wed, 22 Oct 2025 14:32:14 +0800</pubDate>
+      <guid>http://localhost:1313/posts/lora/concept/</guid>
+      <description>&lt;h3 id=&#34;utils-for-lora&#34;&gt;Utils for LoRA&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;merge_and_unload(): 将适配器权重与基础模型合并，从而将新合并的模型作为一个独立模型有效使用。&lt;/li&gt;
+&lt;li&gt;merge_adapter(): 将LoRA层（与前面的适配器权重的关系？）合并到基础模型中，并保留PEFTModel。&lt;/li&gt;
+&lt;li&gt;unmerge_adapter(): 将LoRA层从基础模型解合并，同时保留PEFTModel。&lt;/li&gt;
+&lt;li&gt;unload(): 获取未合并LoRA层前的基础模型，主要是为了获得origin model，听说在Stable Diffusion WebUi中会使用（这是什么？）。&lt;/li&gt;
+&lt;li&gt;delete_adapter(): 删除现有适配器。&lt;/li&gt;
+&lt;li&gt;add_weighted_adapter():根据用户提供的权重方案将多个LoRAs组合成一个新的适配器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;peft中常见的lora参数&#34;&gt;PEFT中常见的LoRA参数&lt;/h3&gt;
+&lt;p&gt;常见的使用LoRA微调模型的流程：
+实例化基础模型 &amp;ndash;&amp;gt; 创建配置(LoraConfig)，包含LoRA特定参数 &amp;ndash;&amp;gt; 将基础模型使用get_peft_model包裹，获取可训练的PEFTModel &amp;ndash;&amp;gt; 开始训练&lt;/p&gt;
+&lt;p&gt;这里具体介绍LoraConfig包含哪些参数来控制LoRA应用于基础模型。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;rank 更新矩阵的秩，用 int 表示。较低的秩会导致更新矩阵更小，训练参数更少。&lt;/li&gt;
+&lt;li&gt;target_modules 应用于 LoRA 更新矩阵的模块&lt;/li&gt;
+&lt;li&gt;lora_alpha LoRA 缩放因子&lt;/li&gt;
+&lt;li&gt;bias 指定 bias 参数是否需要训练。可以是 &amp;rsquo;none&amp;rsquo; 、 &amp;lsquo;all&amp;rsquo; 或 &amp;rsquo;lora_only&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;use_rslora 当设置为 True 时，使用 &lt;code&gt;Rank-Stabilized LoRA&lt;/code&gt;，将适配器缩放因子设置为 &lt;code&gt;lora_alpha/math.sqrt(r)&lt;/code&gt; ，因为它被证明效果更好。否则，它将使用原始默认值 &lt;code&gt;lora_alpha/r&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;modules_to_save 除了 LoRA 层之外，需要设置为可训练并保存在最终检查点中的模块列表。这些通常包括模型的自定义头部，该头部在微调任务中随机初始化。&lt;/li&gt;
+&lt;li&gt;layers_to_transform 需要由 LoRA 转换的层列表。如果未指定，则 &lt;code&gt;target_modules&lt;/code&gt; 中的所有层都将被转换。&lt;/li&gt;
+&lt;li&gt;layers_pattern 匹配 &lt;code&gt;target_modules&lt;/code&gt; 中层名称的模式，如果指定了 &lt;code&gt;layers_to_transform&lt;/code&gt; 。默认情况下 PeftModel 会查看常见层模式（ layers , h , blocks 等），用于异类和自定义模型。&lt;/li&gt;
+&lt;li&gt;rank_pattern 将层名称或正则表达式映射到与 r 指定的默认秩不同的秩。&lt;/li&gt;
+&lt;li&gt;alpha_pattern : 将层名称或正则表达式映射到与 &lt;code&gt;lora_alpha&lt;/code&gt;指定的默认 &lt;code&gt;alpha&lt;/code&gt; 不同的 &lt;code&gt;alpha&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;初始化选项&#34;&gt;初始化选项&lt;/h3&gt;
+&lt;p&gt;LoRA 权重的初始化由 &lt;code&gt;LoraConfig&lt;/code&gt; 的 &lt;code&gt;init_lora_weights&lt;/code&gt; 参数控制。默认情况下，PEFT 以参考实现相同的方式初始化 LoRA 权重，即使用 &lt;code&gt;Kaiming-uniform&lt;/code&gt; 初始化权重 A，并将权重 B 初始化为零，从而得到恒等变换。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LoRA 实操</title>
+      <link>http://localhost:1313/posts/lora/operation/</link>
+      <pubDate>Wed, 22 Oct 2025 11:26:01 +0800</pubDate>
+      <guid>http://localhost:1313/posts/lora/operation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LoRA 总结与衍生</title>
+      <link>http://localhost:1313/posts/lora/summary/</link>
+      <pubDate>Wed, 22 Oct 2025 11:26:01 +0800</pubDate>
+      <guid>http://localhost:1313/posts/lora/summary/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
